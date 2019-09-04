@@ -1,6 +1,7 @@
 import products from "./products-data.json";
 
 export class Products {
+  
   static getProducts() {
     return new Promise((resolve, reject) => {
       if (products) {

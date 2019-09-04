@@ -1,3 +1,3 @@
 export { InitialPage } from "./CompInitialPage";
-export { ListProducts } from "./CompListProducts";
+export { CartProducts } from "./CompCartProducts";
 export { Products } from "./CompProducts";
