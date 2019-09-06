@@ -1,43 +1,100 @@
-// import React from "react";
 import React, { useState, useEffect } from 'react';
 import '../App.css';
 import { Card } from "./CompCard";
 import { Products } from "../api/Products";
 
-export class InitialPage extends React.Component {
+export function InitialPage() {
+    const [objProducts, setObjProducts] = useState([]);
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: 'xpto',
-        };
-    }
-
-    //não faço ideia porque preciso usar o método componentWillMount para resolver essa promise 
-    componentWillMount() {
-        Products.getProductById(1).then(result => {
-            this.setState({ name: result.name });
+    useEffect(() => {
+        Products.getProducts().then(result => {
+            setObjProducts(result.items);
         }, function (error) {
-            this.setState({ name: error });
-        });
-    }
-    
-    render() {
-        return (
-            <>
-                <div className="App">
-                    <main className="App-header">
-                        <h4>Amazing redux store</h4>
-                        <Card name = {this.state.name} />
-                        {/* <Card name = "teste" /> */}
-                        {/* <p>{this.state.name}</p> */}
+            setObjProducts(error);
+        })
+    }, []);
 
-                    </main>
-                </div>
-            </>
-        )
-    }
+    return (
+        <>
+            <div className="App">
+                <main className="App-header">
+                    <h4>Amazing redux store</h4>
+                    <div class="cardContainer">
+                        {objProducts.map(list => (
+                            // <p>{list.name}</p>
+                            <Card
+                                id={list.id}
+                                image={list.image}
+                                name={list.name}
+                                price={list.price}
+                            />
+                        ))}
+                    </div>
+                </main>
+            </div>
+        </>
+    );
 }
+
+
+// export function InitialPage() {
+//     const [name, setName] = useState('');
+
+//     useEffect(() => {
+//         Products.getProductById(1).then(result => {
+//             setName(result.name);
+//         }, function (error) {
+//             setName(error);
+//         })
+//       });
+
+//     return (
+//         <>
+//             <div className="App">
+//                 <main className="App-header">
+//                     <h4>Amazing redux store</h4>
+//                     <Card name={name} />
+//                 </main>
+//             </div>
+//         </>
+//     );
+// }
+
+
+// export class InitialPage extends React.Component {
+
+//     constructor(props) {
+//         super(props);
+//         this.state = {
+//             name: 'xpto',
+//         };
+//     }
+
+//     //não faço ideia porque preciso usar o método componentWillMount para resolver essa promise 
+//     componentWillMount() {
+//         Products.getProductById(1).then(result => {
+//             this.setState({ name: result.name });
+//         }, function (error) {
+//             this.setState({ name: error });
+//         });
+//     }
+
+//     render() {
+//         return (
+//             <>
+//                 <div className="App">
+//                     <main className="App-header">
+//                         <h4>Amazing redux store</h4>
+//                         <Card name = {this.state.name} />
+//                         {/* <Card name = "teste" /> */}
+//                         {/* <p>{this.state.name}</p> */}
+
+//                     </main>
+//                 </div>
+//             </>
+//         )
+//     }
+// }
 
 
 

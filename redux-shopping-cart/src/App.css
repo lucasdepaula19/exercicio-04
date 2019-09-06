@@ -16,6 +16,7 @@
   align-items: center;
   justify-content: center;
   color: white;
+  padding: 5px;
 }
 
 .App-header h4{
@@ -35,8 +36,28 @@
   }
 }
 
+.cardContainer{
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .cardConfig {
-  width: 18rem;
+  width: 14rem;
   text-align: left;
   color: black;
+  margin: 1em;
+}
+
+img{
+  height: 10em;
+  max-width: 14em;
+}
+
+.btn1{
+  width: 200px;
+  margin: 5px;
+}
+
+.prod{
+  
 }
