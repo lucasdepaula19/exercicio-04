@@ -1,12 +1,15 @@
+import { addProduct, VisibilityFilters } from "../actions"
+
 const initialState = {
-    visibilityProducts: VisibilityProducts.SHOW_ALL,
-    products: []
+    visibilityFilter: VisibilityFilters.SHOW_ALL,
+    todos: [],
 }
 
-function todoApp(state = initialState, action) {
+export function todoApp(state = initialState, action) {
     switch (action.type) {
-        case ADD_PRODUCT:
-            return { ...state, visibilityProducts: action.filter }
+        // case SET_VISIBILITY_FILTER:
+        case addProduct.ADD_PRODUCT:
+            return { ...state, visibilityFilter: action.filter }
         default:
             return state
     }
