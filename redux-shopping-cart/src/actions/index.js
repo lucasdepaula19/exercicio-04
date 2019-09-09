@@ -1,14 +1,12 @@
-const ADD_PRODUCT = 'ADD_PRODUCT';
+export const ADD_PRODUCT = 'ADD_PRODUCT';
+export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 
-export function addProduct(product) {
-    return {
-        type: ADD_PRODUCT,
-        product //quando a propriedade tem o mesmo nome do parametro não é necessário atribui-lo product = product
-    }
-}
+export const addProduct = product => ({
+    type: ADD_PRODUCT,
+    product //quando a propriedade tem o mesmo nome do parametro não é necessário atribui-lo product = product
+});
 
-export const VisibilityFilters = {
-    SHOW_ALL: 'SHOW_ALL',
-    SHOW_COMPLETED: 'SHOW_COMPLETED',
-    SHOW_ACTIVE: 'SHOW_ACTIVE'
-}
+export const removeProduct = product => ({
+    type: REMOVE_FROM_CART,
+    product
+  });

@@ -1,16 +1,30 @@
-import { addProduct, VisibilityFilters } from "../actions"
+import { ADD_PRODUCT, REMOVE_FROM_CART } from "../actions"
 
 export const initialState = {
-    visibilityFilter: VisibilityFilters.SHOW_ALL,
     todos: [],
-}
+};
 
-export function todoApp(state = initialState, action) {
+export const todoApp = (state = initialState, action) => {
     switch (action.type) {
-        // case SET_VISIBILITY_FILTER:
-        case addProduct.ADD_PRODUCT:
-            return { ...state, visibilityFilter: action.filter }
-        default:
-            return state
+      case ADD_PRODUCT:
+        if (state.todos.find(p => p.id === action.product.id)) {
+          return state;
+        }
+  
+        return {
+          ...state,
+          products: state.todos.concat(action.product)
+        };
+      case REMOVE_FROM_CART:
+        if (state.todos.find(p => p.id === action.product.id)) {
+          return {
+            ...state,
+            products: state.todos.filter(p => p.id !== action.product.id)
+          };
+        }
+  
+        return state
+      default:
+        return state;
     }
-}
+  };
