@@ -7,5 +7,6 @@ export const ApplicationRoutes = () => (
     <Route path="/" exact component={InitialPage} />
     <Route path="/prod/" exact component={CartProducts} />
     <Route path="/prod/:id" component={ProductsItem} />
+    
   </>
 );

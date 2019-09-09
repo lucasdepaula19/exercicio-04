@@ -58,6 +58,14 @@ img{
   margin: 5px;
 }
 
-.prod{
-  
+#desc{
+  max-width: 700px;
+  margin: 5px;
+  border:2px solid white;
+  text-align: left;
+  padding: 1em;
+}
+
+strong{
+  color: #61dafb;
 }

@@ -1,11 +1,12 @@
 import React from "react";
 import '../App.css';
 
-export const CartProducts = () => (
+export const CartProducts = (props) => (
     <>
         <div className="App">
             <main className="App-header">
-                <h4>Carrinho de produtos</h4>
+                <a href="/" className="btn btn-secondary btn1">Home</a>
+                <h4>Carrinho de produtos </h4>
             </main>
         </div>
     </>

@@ -1,6 +1,6 @@
 import { addProduct, VisibilityFilters } from "../actions"
 
-const initialState = {
+export const initialState = {
     visibilityFilter: VisibilityFilters.SHOW_ALL,
     todos: [],
 }

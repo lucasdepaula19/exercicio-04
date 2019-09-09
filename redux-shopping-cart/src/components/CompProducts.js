@@ -23,14 +23,16 @@ function ProductsItemComponent(prod) {
             <div className="App">
                 <main className="App-header prod">
                     <button className="btn btn-secondary btn1" onClick={(e) => prod.addProduct(obj)}>Add to cart</button>
-
+                    <a href="/prod" className="btn btn-secondary btn1">Cart View ({prod.total})</a>
                     <a href="/" className="btn btn-secondary btn1">Home</a>
                     <h1>Product details</h1>
                     <h3><img src={obj.image && require(`../assets/images/${obj.image}`)} className="card-img-top" alt="" /></h3>
-                    <h3>id: {prod.match.params.id}</h3>
-                    <h3>name: {obj.name}</h3>
-                    <h3>price: {obj.price}</h3>
-                    <h3>description: {obj.description}</h3>
+                    <div id='desc'>
+                        <h3> <strong>id:</strong> {prod.match.params.id}</h3>
+                        <h3> <strong>name:</strong> {obj.name}</h3>
+                        <h3> <strong>price:</strong> {obj.price}</h3>
+                        <h3> <strong>description:</strong> {obj.description}</h3>
+                    </div>
                 </main>
             </div>
         </>
