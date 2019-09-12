@@ -16,7 +16,7 @@ const Cart = props => (
       </Suspense>
     </div>
     <p>
-      <b> teste Amount:</b> R$
+      <b> total:</b> R$
       {props.products
         .reduce((acc, current) => acc + current.price, 0)
         .toFixed(2)}
