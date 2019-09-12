@@ -14,7 +14,7 @@ function App() {
           <header className="App-header">
             <BrowserRouter>
               <div>
-              <Link className="btn btn-secondary btn1" to="/">Home</Link> <Link className="btn btn-secondary btn1" to="/cart"> <CartCounter /> </Link>
+              <Link className="btn btn-secondary btn1" to="/">Home</Link> <Link className="btn btn-secondary btn1" to="/prod"> <CartCounter /> </Link>
               </div>
               <ApplicationRoutes />
             </BrowserRouter>
