@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../App.css';
 import { Products } from "../api/Products";
-import { addProduct } from "../actions";
+import { addToCart } from "../actions";
 import { connect } from 'react-redux';
 
 function ProductsItemComponent(prod) {
@@ -20,7 +20,7 @@ function ProductsItemComponent(prod) {
         <>
             <div className="App">
                 <main className="App-header prod">
-                    <button className="btn btn-secondary btn1" onClick={() => prod.addProduct(obj)}>Add to cart</button>
+                    <button className="btn btn-secondary btn1" onClick={() => prod.addToCart(obj)}>Add to cart</button>
                     <a href="/prod" className="btn btn-secondary btn1">Cart View ({prod.total})</a>
                     <a href="/" className="btn btn-secondary btn1">Home</a>
                     <h1>Product details</h1>
@@ -39,5 +39,5 @@ function ProductsItemComponent(prod) {
 
 export default connect(
     undefined,
-    { addProduct }
+    { addToCart }
 )(ProductsItemComponent)

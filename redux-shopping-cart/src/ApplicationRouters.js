@@ -1,13 +1,13 @@
 import React, { lazy } from "react";
 import { Route } from "react-router-dom";
-import { InitialPage, CartProducts } from "./components";
-const ProductsItem = lazy(() => import("./components/CompProducts"));
+import Cart from "./views/Cart";
+import { InitialPage } from "./views/ProductsList";
+const product = lazy(() => import("./views/Product"));
 
 export const ApplicationRoutes = () => (
   <>
     <Route path="/" exact component={InitialPage} />
-    <Route path="/prod/" exact component={CartProducts} />
-    <Route path="/prod/:id" component={ProductsItem} />
-    
+    <Route path="/prod/" exact component={Cart} />
+    <Route path="/prod/:id" component={product} />
   </>
 );

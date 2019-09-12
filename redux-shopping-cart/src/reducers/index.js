@@ -1,6 +1,6 @@
-import { combineReducers } from 'redux';
-import { todoApp } from './cart';
+import { combineReducers } from "redux";
+import { cart } from "./cart";
 
 export const Reducers = combineReducers({
-    todoApp
+  cart
 });

@@ -1,12 +1,12 @@
-export const ADD_PRODUCT = 'ADD_PRODUCT';
+export const ADD_TO_CART = "ADD_TO_CART";
 export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 
-export const addProduct = product => ({
-    type: ADD_PRODUCT,
-    product //quando a propriedade tem o mesmo nome do parametro não é necessário atribui-lo product = product
+export const addToCart = product => ({
+    type: ADD_TO_CART,
+    product
 });
 
-export const removeProduct = product => ({
+export const removeFromCart = product => ({
     type: REMOVE_FROM_CART,
     product
-  });
+});
