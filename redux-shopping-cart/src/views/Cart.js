@@ -8,13 +8,13 @@ const ProductCartItem = lazy(() => import("../components/ProductCartItem"));
 
 const Cart = props => (
   <div>
-    <ul>
+    <div class="cardContainer">
       <Suspense fallback={<LoadingProduct />}>
         {props.products.map(product => (
           <ProductCartItem key={product.id} product={product} onRemove={props.removeFromCart} />
         ))}
       </Suspense>
-    </ul>
+    </div>
     <p>
       <b> teste Amount:</b> R$
       {props.products

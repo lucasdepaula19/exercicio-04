@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default ({ product, onRemove }) => (
-  <li key={product.id}>
+  <div class="cart" key={product.id}>
     <img
       width="100"
       src={require(`../assets/images/${product.image}`)}
@@ -11,5 +11,5 @@ export default ({ product, onRemove }) => (
     <p>{product.price}</p>
 
     <button onClick={() => onRemove(product)}>Remove</button>
-  </li>
+  </div>
 );
