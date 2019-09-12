@@ -3,7 +3,7 @@ import { Provider } from "react-redux";
 import "./App.css";
 import { Store } from "./store";
 import { ApplicationRoutes } from "./ApplicationRouters";
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { BrowserRouter, Link } from "react-router-dom";
 import { CartCounter } from "./components/CartCounter";
 
 function App() {

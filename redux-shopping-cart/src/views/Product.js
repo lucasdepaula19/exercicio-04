@@ -3,8 +3,6 @@ import '../App.css';
 import { Products } from "../api/Products";
 import { addToCart } from "../actions";
 import { connect } from 'react-redux';
-import { CartCounter } from "../components/CartCounter"
-import { Link } from "react-router-dom";
 
 function ProductsItemComponent(prod) {
     const [obj, setObj] = useState({});
