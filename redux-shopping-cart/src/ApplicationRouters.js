@@ -1,7 +1,7 @@
 import React, { lazy } from "react";
 import { Route } from "react-router-dom";
 import Cart from "./views/Cart";
-import { InitialPage } from "./views/ProductsList";
+import { InitialPage } from "./views/ProductList";
 const product = lazy(() => import("./views/Product"));
 
 export const ApplicationRoutes = () => (

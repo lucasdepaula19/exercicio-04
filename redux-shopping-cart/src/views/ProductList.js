@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../App.css';
-import { Card } from "./CompCard";
+import { Card } from "../components/CompCard";
 import { Products } from "../api/Products";
 
 export function InitialPage() {

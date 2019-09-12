@@ -1,10 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import '../App.css';
 
 const CartCounterComponent = props => (
   <>
-    <Link to="/cart"> View cart ({props.total})</Link>
+    <Link class="colorWhite" to="/prod"> View cart ({props.total})</Link>
   </>
 );
 

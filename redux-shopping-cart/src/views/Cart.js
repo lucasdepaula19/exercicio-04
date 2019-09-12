@@ -2,7 +2,9 @@ import React, { lazy, Suspense } from "react";
 import { connect } from "react-redux";
 import { removeFromCart } from "../actions";
 import { LoadingProduct } from "../components/LoadingProduct";
+
 const ProductCartItem = lazy(() => import("../components/ProductCartItem"));
+
 
 const Cart = props => (
   <div>
@@ -13,9 +15,8 @@ const Cart = props => (
         ))}
       </Suspense>
     </ul>
-
     <p>
-      <b>Amount:</b> R$
+      <b> teste Amount:</b> R$
       {props.products
         .reduce((acc, current) => acc + current.price, 0)
         .toFixed(2)}

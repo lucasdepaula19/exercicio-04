@@ -3,6 +3,8 @@ import '../App.css';
 import { Products } from "../api/Products";
 import { addToCart } from "../actions";
 import { connect } from 'react-redux';
+import { CartCounter } from "../components/CartCounter"
+import { Link } from "react-router-dom";
 
 function ProductsItemComponent(prod) {
     const [obj, setObj] = useState({});
@@ -21,8 +23,10 @@ function ProductsItemComponent(prod) {
             <div className="App">
                 <main className="App-header prod">
                     <button className="btn btn-secondary btn1" onClick={() => prod.addToCart(obj)}>Add to cart</button>
-                    <a href="/prod" className="btn btn-secondary btn1">Cart View ({prod.total})</a>
-                    <a href="/" className="btn btn-secondary btn1">Home</a>
+                    {/* <a href="/prod" className="btn btn-secondary btn1"> <CartCounter /> </a> */}
+                    {/* <span className="btn btn-secondary btn1"> <Link to="/cart"> <CartCounter /> </Link> </span> */}
+                    {/* <a href="/" className="btn btn-secondary btn1">Home</a> */}
+                    {/* <span className="btn btn-secondary btn1"><Link to="/">Home</Link> </span> */}
                     <h1>Product details</h1>
                     <h3><img src={obj.image && require(`../assets/images/${obj.image}`)} className="card-img-top" alt="" /></h3>
                     <div id='desc'>
